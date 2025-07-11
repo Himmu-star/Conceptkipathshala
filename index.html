@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concept की पाठशाला</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="icon" href="logo.jpg" />
+  <style>
+    .nav-link {
+      @apply relative text-blue-800 hover:text-blue-600 transition duration-300 transform hover:scale-105;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #2563eb;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .btn-3d {
+      background: linear-gradient(to right, #3b82f6, #1e3a8a);
+      color: white;
+      transform: perspective(500px) rotateX(0deg);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .btn-3d:hover {
+      transform: perspective(500px) rotateX(8deg);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .card-hover {
+      transition: all 0.4s ease;
+      transform: perspective(600px);
+    }
+    .card-hover:hover {
+      transform: perspective(600px) rotateY(6deg) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+ <!-- Navbar with Hamburger -->
+<header class="sticky top-0 z-50 bg-white shadow backdrop-blur-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="logo.jpg" class="w-10 h-10 rounded-full" alt="Logo">
+      <h1 class="text-2xl font-bold text-blue-800">Concept की पाठशाला</h1>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="courses.html" class="nav-link">Courses</a>
+      <a href="campus.html" class="nav-link">Campus</a>
+      <a href="achievements.html" class="nav-link">Achievements</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Hamburger Icon -->
+    <button id="menu-btn" class="md:hidden text-3xl text-blue-700 focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="menu" class="hidden md:hidden bg-white shadow-md">
+    <nav class="flex flex-col space-y-2 p-4 text-sm font-medium">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="courses.html" class="nav-link">Courses</a>
+      <a href="campus.html" class="nav-link">Campus</a>
+      <a href="achievements.html" class="nav-link">Achievements</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+  </div>
+
+  <style>
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      padding: 0.5rem 0;
+      color: #1e3a8a;
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #2563eb;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #2563eb;
+      transform: scale(1.05) rotateZ(-2deg);
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</header>
+
+
+  <!-- Hero Slider -->
+  <section class="relative">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="banner1.jpg" class="w-full h-[400px] object-cover" alt="banner1"></div>
+        <div class="swiper-slide"><img src="banner2.jpg" class="w-full h-[400px] object-cover" alt="banner2"></div>
+        <div class="swiper-slide"><img src="banner3.jpg" class="w-full h-[400px] object-cover" alt="banner1"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 text-center px-4">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">हमारा उद्देश्य</h2>
+    <p class="text-lg max-w-3xl mx-auto text-gray-700">Concept की पाठशाला का उद्देश्य है छात्रों को सही मार्गदर्शन, नियमित अभ्यास और गहन समझ के साथ प्रतियोगी परीक्षाओं में सफल बनाना।</p>
+    <a href="admission.html" class="mt-6 inline-block px-6 py-3 rounded-full btn-3d">Get Started</a>
+  </section>
+
+  <!-- Exams Section -->
+  <section class="py-12 bg-blue-50">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
+      <a href="courses.html#ssc" class="bg-white p-6 rounded-xl shadow card-hover text-center">SSC</a>
+      <a href="courses.html#railway" class="bg-white p-6 rounded-xl shadow card-hover text-center">Railway</a>
+      <a href="courses.html#army" class="bg-white p-6 rounded-xl shadow card-hover text-center">Army</a>
+      <a href="courses.html#police" class="bg-white p-6 rounded-xl shadow card-hover text-center">Police</a>
+    </div>
+  </section>
+
+  <!-- Subjects Section -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
+      <a href="courses.html#maths" class="bg-gradient-to-br from-blue-500 to-blue-800 text-white p-6 rounded-xl shadow-md card-hover text-center">Maths</a>
+      <a href="courses.html#reasoning" class="bg-gradient-to-br from-green-500 to-green-700 text-white p-6 rounded-xl shadow-md card-hover text-center">Reasoning</a>
+      <a href="courses.html#gk" class="bg-gradient-to-br from-yellow-500 to-yellow-700 text-white p-6 rounded-xl shadow-md card-hover text-center">GK</a>
+      <a href="courses.html#gs" class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl shadow-md card-hover text-center">GS</a>
+    </div>
+  </section>
+
+  <!-- Campus & Address -->
+  <section class="bg-white py-12 text-center">
+    <h2 class="text-2xl font-bold mb-4 text-blue-700">हमारा परिसर</h2>
+    <p class="mb-4">Lane no 1, Officer's Colony, Bara Chakia, East Champaran, Bihar</p>
+    <a href="campus.html" class="text-blue-600 underline font-semibold hover:text-blue-800 transition">Explore Campus Video</a>
+  </section>
+
+  <!-- Achievements -->
+  <section class="bg-gray-100 py-12 text-center">
+    <h2 class="text-2xl font-bold text-blue-700 mb-6">हमारी उपलब्धियाँ</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div class="card-hover bg-white p-4 rounded-xl shadow">
+        <h3 class="text-3xl font-bold text-green-600">500+</h3><p>Selections</p>
+      </div>
+      <div class="card-hover bg-white p-4 rounded-xl shadow">
+        <h3 class="text-3xl font-bold text-green-600">50+</h3><p>Toppers</p>
+      </div>
+      <div class="card-hover bg-white p-4 rounded-xl shadow">
+        <h3 class="text-3xl font-bold text-green-600">15+</h3><p>Batches</p>
+      </div>
+      <div class="card-hover bg-white p-4 rounded-xl shadow">
+        <h3 class="text-3xl font-bold text-green-600">5+</h3><p>Years Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback Section -->
+  <section class="bg-white py-12">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl font-bold text-blue-700">Students Feedback</h2>
+    </div>
+    <div class="max-w-4xl mx-auto swiper feedbackSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p-4 bg-blue-50 rounded-xl card-hover">“Best coaching in Chakia for competitive exams.”</div>
+        <div class="swiper-slide p-4 bg-blue-50 rounded-xl card-hover">“Manish Sir is amazing! His GS classes are gold.”</div>
+        <div class="swiper-slide p-4 bg-blue-50 rounded-xl card-hover">“Result-oriented & concept-based teaching.”</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Concept की पाठशाला | Developed by Civilian Himmu</p>
+  </footer>
+
+  <!-- Floating Call Button -->
+  <a href="tel:9504111765" class="fixed bottom-6 right-6 bg-green-500 text-white px-4 py-3 rounded-full shadow-lg hover:scale-110 transition">
+    📞 Call Now
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination" },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    });
+
+    var feedbackSwiper = new Swiper(".feedbackSwiper", {
+      loop: true,
+      autoplay: { delay: 4000 },
+    });
+  </script>
+</body>
+</html>
