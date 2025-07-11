@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Concept की पाठशाला</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .input-style {
+      @apply w-full p-3 border border-gray-300 rounded-md mb-4;
+    }
+    .btn-submit {
+      @apply bg-blue-700 text-white py-2 px-6 rounded-full hover:bg-blue-800 transition;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" class="w-10 h-10 rounded-full" alt="Logo">
+        <h1 class="text-2xl font-bold text-blue-800">Concept की पाठशाला</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-blue-700 hover:text-blue-500">Home</a>
+        <a href="about.html" class="text-blue-700 hover:text-blue-500">About</a>
+        <a href="courses.html" class="text-blue-700 hover:text-blue-500">Courses</a>
+        <a href="contact.html" class="text-blue-700 font-semibold">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Info -->
+  <section class="text-center py-16 px-4">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">संपर्क करें</h2>
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto">हमसे संपर्क करने के लिए नीचे दिए गए विवरण का उपयोग करें या फॉर्म भरें।</p>
+  </section>
+
+  <!-- Contact Details -->
+  <section class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+    <div class="space-y-4">
+      <h3 class="text-xl font-semibold text-blue-700">Address:</h3>
+      <p>Lane no 1, Officer's Colony, Bara Chakia, East Champaran, Bihar</p>
+      <h3 class="text-xl font-semibold text-blue-700">Phone:</h3>
+      <p><a href="tel:9504111765" class="text-green-600 font-medium">9504111765</a> (WhatsApp Available)</p>
+      <h3 class="text-xl font-semibold text-blue-700">Email:</h3>
+      <p><a href="mailto:conceptclasseschakia@gmail.com" class="text-blue-600 font-medium">conceptclasseschakia@gmail.com</a></p>
+      <h3 class="text-xl font-semibold text-blue-700">Follow Us:</h3>
+      <div class="flex space-x-4">
+        <a href="#" class="text-blue-600 hover:text-blue-800">Facebook</a>
+        <a href="#" class="text-pink-500 hover:text-pink-700">Instagram</a>
+        <a href="#" class="text-red-500 hover:text-red-700">YouTube</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="bg-white p-6 rounded-xl shadow-md">
+      <input type="text" id="cname" placeholder="Your Name" class="input-style" required>
+      <input type="email" id="cemail" placeholder="Your Email" class="input-style">
+      <input type="text" id="cphone" placeholder="Phone Number" class="input-style" required>
+      <textarea id="cmessage" placeholder="Your Message" rows="4" class="input-style" required></textarea>
+      <button type="submit" class="btn-submit">Send via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- Google Map -->
+  <section class="text-center pb-12 px-4">
+    <iframe class="w-full max-w-4xl h-72 mx-auto rounded-xl shadow-md" src="https://maps.app.goo.gl/77mdcS2ndco8Yr1T8" allowfullscreen></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Concept की पाठशाला | Developed by Civilian Himmu</p>
+  </footer>
+
+  <!-- WhatsApp Script -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('cname').value;
+      const email = document.getElementById('cemail').value;
+      const phone = document.getElementById('cphone').value;
+      const message = document.getElementById('cmessage').value;
+
+      const text = `✉️ *New Contact Message*\n\n👤 Name: ${name}\n📧 Email: ${email}\n📞 Phone: ${phone}\n✍️ Message: ${message}`;
+      const encoded = encodeURIComponent(text);
+      window.open(`https://wa.me/9504111765?text=${encoded}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>

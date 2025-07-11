@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission | Concept की पाठशाला</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .form-card {
+      @apply bg-white p-6 rounded-xl shadow-md max-w-xl mx-auto;
+    }
+    .form-card input, .form-card select, .form-card textarea {
+      @apply w-full p-3 border rounded-md mb-4;
+    }
+    .btn-send {
+      @apply bg-blue-700 text-white py-2 px-6 rounded-full hover:bg-blue-800 transition;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" class="w-10 h-10 rounded-full" alt="Logo">
+        <h1 class="text-2xl font-bold text-blue-800">Concept की पाठशाला</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-blue-700 hover:text-blue-500">Home</a>
+        <a href="about.html" class="text-blue-700 hover:text-blue-500">About</a>
+        <a href="courses.html" class="text-blue-700 hover:text-blue-500">Courses</a>
+        <a href="admission.html" class="text-blue-700 font-semibold">Admission</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Admission Form -->
+  <section class="py-16 px-4">
+    <h2 class="text-3xl font-bold text-blue-800 text-center mb-8">Admission Form</h2>
+    <form id="admissionForm" class="form-card">
+      <input type="text" id="name" placeholder="Student Name" required>
+      <input type="text" id="phone" placeholder="Phone Number" required>
+      <input type="text" id="city" placeholder="City / Village" required>
+      <select id="exam">
+        <option value="">Select Exam Type</option>
+        <option>SSC</option>
+        <option>Railway</option>
+        <option>Banking</option>
+        <option>Police/Daroga</option>
+        <option>Army</option>
+      </select>
+      <textarea id="message" rows="3" placeholder="Any Message (Optional)"></textarea>
+      <button type="submit" class="btn-send">Send via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Concept की पाठशाला | Developed by Civilian Himmu</p>
+  </footer>
+
+  <!-- WhatsApp Script -->
+  <script>
+    document.getElementById('admissionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const city = document.getElementById('city').value;
+      const exam = document.getElementById('exam').value;
+      const msg = document.getElementById('message').value;
+      const whatsapp = "9504111765";
+
+      const text = `👨‍🎓 *New Admission Enquiry*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 City: ${city}\n🎯 Exam: ${exam}\n📝 Message: ${msg}`;
+      const encoded = encodeURIComponent(text);
+      window.open(`https://wa.me/${whatsapp}?text=${encoded}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>

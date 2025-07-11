@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievements | Concept की पाठशाला</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .card-hover {
+      transition: all 0.4s ease;
+    }
+    .card-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" class="w-10 h-10 rounded-full" alt="Logo">
+        <h1 class="text-2xl font-bold text-blue-800">Concept की पाठशाला</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-blue-700 hover:text-blue-500">Home</a>
+        <a href="about.html" class="text-blue-700 hover:text-blue-500">About</a>
+        <a href="courses.html" class="text-blue-700 hover:text-blue-500">Courses</a>
+        <a href="achievements.html" class="text-blue-700 font-semibold">Achievements</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Achievements Section -->
+  <section class="py-16 px-4 text-center">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">हमारी उपलब्धियाँ</h2>
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto">Concept की पाठशाला ने छात्रों को उनके सपनों की नौकरी तक पहुँचाने में अग्रणी भूमिका निभाई है।</p>
+  </section>
+
+  <!-- Statistics -->
+  <section class="bg-white py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto px-4 text-center">
+      <div class="card-hover bg-blue-50 p-6 rounded-xl">
+        <h3 class="text-4xl font-bold text-green-600">500+</h3>
+        <p class="mt-2 text-sm">Successful Selections</p>
+      </div>
+      <div class="card-hover bg-green-50 p-6 rounded-xl">
+        <h3 class="text-4xl font-bold text-green-600">50+</h3>
+        <p class="mt-2 text-sm">Top Rankers</p>
+      </div>
+      <div class="card-hover bg-yellow-50 p-6 rounded-xl">
+        <h3 class="text-4xl font-bold text-green-600">15+</h3>
+        <p class="mt-2 text-sm">Running Batches</p>
+      </div>
+      <div class="card-hover bg-purple-50 p-6 rounded-xl">
+        <h3 class="text-4xl font-bold text-green-600">5+</h3>
+        <p class="mt-2 text-sm">Years of Excellence</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topper Showcase -->
+  <section class="bg-gray-100 py-12">
+    <div class="text-center mb-10">
+      <h3 class="text-2xl font-bold text-blue-800">Top Achievers</h3>
+      <p class="text-gray-600">कुछ प्रमुख छात्रों की उपलब्धियाँ:</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white rounded-xl p-4 shadow-md card-hover">
+        <img src="topper1.jpg" alt="Topper 1" class="rounded-md mb-2">
+        <h4 class="text-lg font-semibold text-blue-700">राहुल कुमार</h4>
+        <p class="text-sm text-gray-600">SSC CGL - 2023 Qualified</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md card-hover">
+        <img src="topper2.jpg" alt="Topper 2" class="rounded-md mb-2">
+        <h4 class="text-lg font-semibold text-blue-700">नेहा कुमारी</h4>
+        <p class="text-sm text-gray-600">Railway NTPC - Top 10</p>
+      </div>
+      <div class="bg-white rounded-xl p-4 shadow-md card-hover">
+        <img src="topper3.jpg" alt="Topper 3" class="rounded-md mb-2">
+        <h4 class="text-lg font-semibold text-blue-700">विकास सिंह</h4>
+        <p class="text-sm text-gray-600">Bihar Police - Constable</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Concept की पाठशाला | Developed by Civilian Himmu</p>
+  </footer>
+
+</body>
+</html>
